@@ -1,5 +1,6 @@
+@import '../../sass/_breakpoints'
+
 .home-page
-  padding: 1rem
   background: #eee
 
   .items-list
@@ -8,3 +9,12 @@
     display: grid
     grid-template-columns: 1fr 1fr
     grid-gap: 1rem
+
+    @include md
+      grid-template-columns: 1fr 1fr 1fr
+
+    @include lg
+      grid-template-columns: 1fr 1fr 1fr 1fr
+
+    @include xl
+      grid-template-columns: repeat(5, 1fr)

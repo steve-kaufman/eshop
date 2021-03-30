@@ -1,0 +1,16 @@
+$md-breakpoint: 600
+$lg-breakpoint: 900
+$xl-breakpoint: 1200
+
+@mixin md
+  @media only screen and (min-width: #{$md-breakpoint}px)
+    @content
+
+@mixin lg
+  @media only screen and (min-width: #{$lg-breakpoint}px)
+    @content
+
+@mixin xl
+  @media only screen and (min-width: #{$xl-breakpoint}px)
+    @content
+    

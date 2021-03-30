@@ -5,7 +5,7 @@ const items = [
   {
     title: "Pencils",
     description: "12 pk.",
-    imgSRC: "https://images2.minutemediacdn.com/image/upload/c_crop,h_1192,w_2125,x_0,y_71/f_auto,q_auto,w_1100/v1554932488/shape/mentalfloss/istock-172863370.jpg",
+    imgSRC: "https://artsy-media-uploads.s3.amazonaws.com/QLbuWKkapyx4UHkcjAIX7Q%2FPencils.jpg",
     price: "$3.49"
   },
   {
@@ -42,7 +42,7 @@ const items = [
 
 export const HomePage = () => {
   return (
-    <main className="home-page">
+    <main className="home-page container">
       <ul className="items-list">
         {items.map(({title, description, imgSRC, price}, i) => (
           <li key={i}>

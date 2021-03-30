@@ -1,9 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import "sass/breakpoints"
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap')
+
 
 *
   margin: 0
   padding: 0
-  font-family: 'Open Sans', 'Arial', 'Helvetica', sans-serif
+  font-family: 'Montserrat', 'Open Sans', 'Arial', 'Helvetica', sans-serif
   box-sizing: border-box
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
+
+html
+  font-size: 16px
+
+  @include md
+    font-size: 18px
+
+  @include lg
+    font-size: 16px
+
+
+.container
+  padding: 1rem
+
+  @include md
+    padding: 1rem 2rem
+
+  @include lg
+    padding: 1rem 4rem
+  
+  @include xl
+    padding: 2rem 8rem

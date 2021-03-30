@@ -28,26 +28,10 @@ jobs:
         run: docker push stevekaufman/eshop-frontend
         
   Deploy:
+    needs: Docker
+
     runs-on: ubuntu-latest
 
     steps:
-      - name: Get SSH Key
-        env:
-          PRIVATE_KEY: ${{ secrets.DROPLET_SSH_PRIVATE_KEY }}
-          PUBLIC_KEY: ${{ secrets.DROPLET_SSH_PUBLIC_KEY }}
-        run: mkdir ~/.ssh && echo $PRIVATE_KEY > ~/.ssh/id_rsa && echo $PUBLIC_KEY > ~/.ssh/id_rsa.pub
-
-      - name: SSH Login
-        env:
-          USERNAME: ${{ secrets.DROPLET_USERNAME }}
-          HOSTNAME: ${{ secrets.DROPLET_HOSTNAME }}
-        run: ssh $HOSTNAME -l $USERNAME
-
-      - name: Docker Pull
-        run: docker pull stevekaufman/eshop-frontend
-
-      - name: Docker Stop
-        run: docker stop eshop-frontend
-
-      - name: Docker Run
-        run: docker run -d --rm --name eshop-frontend -p 8085:8080 stevekaufman/eshop-frontend
+      - name: Trigger Deploy
+        run: curl https://steve-kaufman.com/deploy/

@@ -1,6 +1,10 @@
+@import '../../sass/_breakpoints'
+
 .item
   background: white
   border-radius: 5px
+  width: 10rem
+  margin: 0.6rem
 
   .img-container
     display: flex
@@ -27,8 +31,14 @@
     color: white
     border-radius: 5px
 
+    @include lg
+      font-size: 1rem
+
     .item-description
       font-size: 0.7rem
+
+      @include lg
+        font-size: 0.9rem
 
     .price
       font-weight: bold

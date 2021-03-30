@@ -6,15 +6,17 @@
   .items-list
     list-style: none
     padding: 0.5rem
-    display: grid
-    grid-template-columns: 1fr 1fr
-    grid-gap: 1rem
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-around
+    // display: grid
+    // grid-template-columns: 1fr 1fr
 
-    @include md
-      grid-template-columns: 1fr 1fr 1fr
+    // @include md
+    //   grid-template-columns: 1fr 1fr 1fr
 
-    @include lg
-      grid-template-columns: 1fr 1fr 1fr 1fr
+    // @include lg
+    //   grid-template-columns: 1fr 1fr 1fr 1fr
 
-    @include xl
-      grid-template-columns: repeat(5, 1fr)
+    // @include xl
+    //   grid-template-columns: repeat(5, 1fr)
